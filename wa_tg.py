@@ -26,7 +26,7 @@ doc = input("How many docs?")
 if __name__ == "__main__":
     print("Please dont touch your mouse until python downloads data from whatsapp")
     win_search = pyg.locateCenterOnScreen(
-        "C:/Users/.../Desktop/python_automate/images/win_search.png"
+        "C:/Users/.../Desktop/python_automate/win_search.png"
     )
     x = win_search[0]
     y = win_search[1]
@@ -39,7 +39,7 @@ if __name__ == "__main__":
     wait = True
     while wait:
         win_search = pyg.locateCenterOnScreen(
-            "C:/Users/.../Desktop/python_automate/images/whatsapp_search.png"
+            "C:/Users/.../Desktop/python_automate/whatsapp_search.png"
         )
         if type(win_search) == type(None):
             wait = True
@@ -47,7 +47,7 @@ if __name__ == "__main__":
             wait = False
 
     win_search = pyg.locateCenterOnScreen(
-        "C:/Users/.../Desktop/python_automate/images/whatsapp_search.png"
+        "C:/Users/.../Desktop/python_automate/whatsapp_search.png"
     )
     x = win_search[0]
     y = win_search[1]
@@ -58,7 +58,7 @@ if __name__ == "__main__":
     time.sleep(5)  # 5 seconds sleep
 
     win_search = pyg.locateCenterOnScreen(
-        "C:/Users/.../Desktop/python_automate/images/whatsapp_attach3dots.png"
+        "C:/Users/.../Desktop/python_automate/whatsapp_attach3dots.png"
     )
     x = win_search[0] + 15
     y = win_search[1]
@@ -67,7 +67,7 @@ if __name__ == "__main__":
     time.sleep(1)  # 5 seconds sleep
 
     win_search = pyg.locateCenterOnScreen(
-        "C:/Users/.../Desktop/python_automate/images/whatsapp_groupinfo.png"
+        "C:/Users/.../Desktop/python_automate/whatsapp_groupinfo.png"
     )
     x = win_search[0]
     y = win_search[1]
@@ -76,7 +76,7 @@ if __name__ == "__main__":
     time.sleep(1)  # 5 seconds sleep
 
     win_search = pyg.locateCenterOnScreen(
-        "C:/Users/.../Desktop/python_automate/images/whatsapp_medialinks.png"
+        "C:/Users/.../Desktop/python_automate/whatsapp_medialinks.png"
     )
     x = win_search[0]
     y = win_search[1]
@@ -87,7 +87,7 @@ if __name__ == "__main__":
     doc_number = range(1, int(doc) + 1)
 
     win_search = pyg.locateCenterOnScreen(
-        "C:/Users/.../Desktop/python_automate/images/whatsapp_docs.png"
+        "C:/Users/.../Desktop/python_automate/whatsapp_docs.png"
     )
     x_doc = win_search[0]
     y_doc = win_search[1]
@@ -107,7 +107,7 @@ if __name__ == "__main__":
         wait = True
         while wait:
             win_search = pyg.locateCenterOnScreen(
-                "C:/Users/.../Desktop/python_automate/images/win_save.png"
+                "C:/Users/.../Desktop/python_automate/win_save.png"
             )
             if type(win_search) == type(None):
                 wait = True
@@ -121,7 +121,7 @@ if __name__ == "__main__":
         time.sleep(1)  # 5 seconds sleep
 
         win_search = pyg.locateCenterOnScreen(
-            "C:/Users/.../Desktop/python_automate/images/win_save.png"
+            "C:/Users/.../Desktop/python_automate/win_save.png"
         )
         x = win_search[0]
         y = win_search[1]
