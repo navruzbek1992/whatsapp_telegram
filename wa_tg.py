@@ -1,6 +1,5 @@
 import pyautogui as pyg
 import time
-import pandas as pd
 from datetime import datetime
 from telethon.sync import TelegramClient
 from telethon.tl.types import InputPeerEmpty
@@ -17,7 +16,6 @@ from telethon.tl.types import PeerChannel
 import asyncio
 import configparser
 import json
-import re
 import shutil
 from utils import *
 
