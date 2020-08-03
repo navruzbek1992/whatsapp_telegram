@@ -31,7 +31,7 @@ Since user's screen size is different and pyautogui library finds keys pixel by 
 python wa_tg.py
 ```
 
-User does not need use mouse for some time. Pyautogui takes control of mouse and downloads data from whatsapp.
+User does not need to use mouse for 2 - 3 minutes. Pyautogui takes control of mouse and downloads data from whatsapp.
 
 ## Authors
 
