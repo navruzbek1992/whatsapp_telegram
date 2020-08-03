@@ -1,6 +1,5 @@
 import pyautogui as pyg
 import time
-import pandas as pd
 from datetime import datetime
 from telethon.sync import TelegramClient
 import asyncio
