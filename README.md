@@ -23,7 +23,7 @@ Pyautogui needs pictures of whatsapp's button.
 User can make exact copy of pics by using PrintScreen key.
 
 Example png files are shown in the repo. 
-Since user's screen size is different and pautogui finds keys pixel by pixel.
+Since user's screen size is different and pyautogui library finds keys pixel by pixel.
 
 ## Deployment
 
