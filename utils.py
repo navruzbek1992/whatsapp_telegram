@@ -1,4 +1,5 @@
 import configparser
+import pyautogui as pyg
 
 
 def information_parser(config_read):
@@ -14,3 +15,15 @@ def information_parser(config_read):
     phone = config["Telegram"]["phone"]
     username = config["Telegram"]["username"]
     return tuple([phone, username, api_id, api_hash])
+
+
+def waiter(filename):
+    wait = True
+    while wait:
+        win_search = pyg.locateCenterOnScreen(filename)
+        if type(win_search) == type(None):
+            wait = True
+        else:
+            wait = False
+
+    return
