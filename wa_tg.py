@@ -122,9 +122,9 @@ if __name__ == "__main__":
     nest_asyncio.apply()
     info = information_parser("config.ini")
 
-    client = TelegramClient(info[0], info[2], info[3])
-
-    client.start()
-    send_to_tg(new_path)
-
+    async with TelegramClient(info[0], info[2], info[3]) as client:
+        await client.start()
+        
+        send_to_tg(new_path)
+    
     print("Done!")
