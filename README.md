@@ -11,6 +11,9 @@ Script assumes that user has Whatsapp application installed.
 
 Also user should get telegram api keys from [my.telegram.org](https://my.telegram.org/auth).
 
+Script works smoothly for windows system.
+Linux users may face problems since each python library requires the user to install its dependencies.
+
 ### Installing
 
 Say what the step will be
