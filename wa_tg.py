@@ -11,11 +11,12 @@ from utils import *
 import os
 import nest_asyncio
 import subprocess
+import webbrowser
+
 
 nest_asyncio.apply()
 
 doc = input("How many docs?: ")
-
 
 async def send_data(new_path):
     for file_name in os.listdir(new_path):
@@ -34,17 +35,22 @@ if __name__ == "__main__":
 
     print("Please dont touch your mouse until python downloads data from whatsapp")
     username = input("What is username for this PC?: ")
+    openweb = input("Is whatsapp installed: ")
 
-    subprocess.Popen(
-        [
-            "C:/Users"
-            + "/"
-            + str(username)
-            + "/"
-            + "AppData/Local/WhatsApp/WhatsApp.exe",
-            "-new-tab",
-        ]
-    )
+    if not openweb:        
+        subprocess.Popen(
+            [
+                "C:/Users"
+                + "/"
+                + str(username)
+                + "/"
+                + "AppData/Local/WhatsApp/WhatsApp.exe",
+                "-new-tab",
+            ]
+        )
+    else:
+        webbrowser.open('https://web.whatsapp.com/')
+    
     time.sleep(10)
     waiter("whatsapp_search.png")
     win_search = pyg.locateCenterOnScreen("whatsapp_search.png")
