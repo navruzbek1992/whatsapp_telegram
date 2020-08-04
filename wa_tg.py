@@ -28,7 +28,7 @@ async def send_data(new_path):
 def send_to_tg(new_path):
     loop = asyncio.get_event_loop()
     loop.run_until_complete(send_data(new_path))
-    loop.close()
+
 
 
 if __name__ == "__main__":
