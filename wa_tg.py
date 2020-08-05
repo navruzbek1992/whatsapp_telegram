@@ -18,18 +18,17 @@ nest_asyncio.apply()
 
 doc = input("How many docs?: ")
 
-async def send_data(new_path):
-    for file_name in os.listdir(new_path):
-        if "python_gen_" in file_name:
-            file = new_path + "/" + file_name
-            await client.send_file("me", file)
+async def send_to_tg(new_path, info):
+    async with TelegramClient(info[0], info[2], info[3]) as client:
+        for file_name in os.listdir(new_path):
+            if "python_gen_" in file_name:
+                file = new_path + "/" + file_name
+                await client.send_file("me", file)
 
-
-def send_to_tg(new_path):
+def main(new_path, info):
     loop = asyncio.get_event_loop()
-    loop.run_until_complete(send_data(new_path))
-
-
+    loop.run_until_complete(send_to_tg(new_path, info))
+    
 
 if __name__ == "__main__":
 
@@ -125,12 +124,10 @@ if __name__ == "__main__":
         if "python_gen_" in file_name:
             shutil.move(downloaded_path + "/" + file_name, new_path)
 
-    nest_asyncio.apply()
     info = information_parser("config.ini")
-
-    async with TelegramClient(info[0], info[2], info[3]) as client:
-        await client.start()
-        
-        send_to_tg(new_path)
+   
+    nest_asyncio.apply()
+    main(new_path, info)
+    
     
     print("Done!")
