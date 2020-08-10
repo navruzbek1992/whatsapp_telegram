@@ -18,6 +18,7 @@ nest_asyncio.apply()
 
 doc = input("How many docs?: ")
 
+
 async def send_to_tg(new_path, info):
     async with TelegramClient(info[0], info[2], info[3]) as client:
         for file_name in os.listdir(new_path):
@@ -25,18 +26,20 @@ async def send_to_tg(new_path, info):
                 file = new_path + "/" + file_name
                 await client.send_file("me", file)
 
+
 def main(new_path, info):
     loop = asyncio.get_event_loop()
     loop.run_until_complete(send_to_tg(new_path, info))
-    
+
 
 if __name__ == "__main__":
 
     print("Please dont touch your mouse until python downloads data from whatsapp")
     username = input("What is username for this PC?: ")
     openweb = input("Is whatsapp installed: ")
+    tg_group_name = input("What is the tg group name?: ")
 
-    if not openweb:        
+    if not openweb:
         subprocess.Popen(
             [
                 "C:/Users"
@@ -48,8 +51,8 @@ if __name__ == "__main__":
             ]
         )
     else:
-        webbrowser.open('https://web.whatsapp.com/')
-    
+        webbrowser.open("https://web.whatsapp.com/")
+
     time.sleep(10)
     waiter("whatsapp_search.png")
     win_search = pyg.locateCenterOnScreen("whatsapp_search.png")
@@ -124,10 +127,12 @@ if __name__ == "__main__":
         if "python_gen_" in file_name:
             shutil.move(downloaded_path + "/" + file_name, new_path)
 
-    info = information_parser("config.ini")
-   
-    nest_asyncio.apply()
-    main(new_path, info)
-    
-    
-    print("Done!")
+    #     info = information_parser("config.ini")
+
+    #     nest_asyncio.apply()
+    #     main(new_path, info)
+
+    sent = send_by_tg(username, tg_group_name, downloaded_path)
+
+    if sent:
+        print("Done!")
